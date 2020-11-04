@@ -3,7 +3,6 @@ use strict;
 use List::Util qw(shuffle);
 use Getopt::Long;
 ##Please specify where your prefered database searching tool locates
-##kraken2 (Line 133) https://github.com/DerrickWood/kraken2.git
 ##NCBI blast ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
 my $blast    = "blastall";
 my $formatdb = "formatdb";
