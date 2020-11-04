@@ -8,7 +8,7 @@ Four files are included in VB12Path:
 
 <b>1. VB12_2020.zip</b>: fasta format representative sequences obtained by clustering curated sequences at 100% sequence identity. This file can be used for "BLAST" searching VB12Path genes in shotgun metagenomes.
 
-<b>2. id2gene.VB12.map</b>: a mapping file that maps sequence IDs to gene names, only sequences belonging to VB12Path gene families are included. Sequences for VB12Path homologs are not included. This file is used to generate VB12Path profiles from BLAST-like results against the VB12Path database. 
+<b>2. id2gene.map</b>: a mapping file that maps sequence IDs to gene names, only sequences belonging to VB12Path gene families are included. Sequences for VB12Path homologs are not included. This file is used to generate VB12Path profiles from BLAST-like results against the VB12Path database. 
 
 <b>3. VB12Path_FunctionProfiler.PL</b>: a perl script for functional profiling of VB12 synthesis genes.
 
@@ -40,9 +40,9 @@ kraken2: https://github.com/DerrickWood/kraken2.git
 
 <b>USAGE</b>
 
-Before getting started, please modify both scripts (VB12Path_FunctionProfiler.PL, VB12Path_TaxonomyProfiler.PL) at lines 6-16 to specify the locations of third party tools and their parameters. If the tools are already in the system path, no revision is needed. By default, basic parameters are used for these tools. Users are encouraged to make revisions in cases of short reads and/or expecting more strict/relaxed results. We also encourage users to develop useful implementations based on VB12Path.
+Before getting started, please modify both scripts (VB12Path_FunctionProfiler.PL, VB12Path_TaxonomyProfiler.PL) at lines 6-18 to specify the locations of third party tools and their parameters. If the tools are already in the system path, no revision is needed. By default, basic parameters are used for these tools. Users are encouraged to make revisions in cases of short reads and/or expecting more strict/relaxed results. We also encourage users to develop useful implementations based on VB12Path.
 
-Note: To start, download the Kraken2 database and modify script(VB12Path_TaxonomyProfiler.PL)(Line 133)
+Note: Kraken2 database could be downloaded from https://ccb.jhu.edu/software/kraken2/index.shtml?t=downloads, or built locally. 
 
 <b>Example for using VB12Path_FunctionProfiler.PL:</b>
 
@@ -84,6 +84,6 @@ Detailed explanations:
 -rs: specify the number of sequences for random subsampling, if not specified, the lowest number in -si will be used.
 
 <b>Example for sampleinfo.txt:</b>
-xxx.fastq	\<the number of sequences\>
+sample_name	\<the number of sequences\>
 
 Reference tools:seqkit https://bioinf.shenwei.me/seqkit/usage/#seqkit
