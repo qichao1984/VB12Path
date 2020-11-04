@@ -84,6 +84,11 @@ Detailed explanations:
 -rs: specify the number of sequences for random subsampling, if not specified, the lowest number in -si will be used.
 
 <b>Example for sampleinfo.txt:</b>
-sample_name	\<the number of sequences\>
+
+sample_name1	\<the number of sequences\>
+
+sample_name2	\<the number of sequences\>
+
+sample_name3	\<the number of sequences\>
 
 Reference tools:seqkit https://bioinf.shenwei.me/seqkit/usage/#seqkit
