@@ -5,12 +5,15 @@ use Getopt::Long;
 
 ##Please specify where your prefered database searching tool locates
 ##NCBI blast ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
-my $blast    = "~/bin/blast/bin/blastall";
-my $formatdb = "~/bin/blast/bin/formatdb";
+my $blast    = "blastall";
+my $formatdb = "formatdb";
+my $blast_parameters="-m 8 -e 1e-4 -b 1 -v 1";
 ##diamond https://github.com/bbuchfink/diamond/releases
-my $diamond = "~/bin/diamond-0.9.14/bin/diamond";
+my $diamond = "diamond";
+my $diamond_parameters="-k 1 -e 1e-4 -p 20";
 ##usearch https://www.drive5.com/usearch/download.html
-my $usearch = "~/bin/usearch8.1.1861_i86linux32";
+my $usearch = "usearch8.1.1861_i86linux32";
+my $usearch_parameters="-id 0.3";
 
 my ( $workdir, $method, $outfile, $seqtype, $filetype, $sampleinfo, $randomsampling );
 GetOptions(
@@ -38,14 +41,14 @@ if ( !defined $workdir
 my (@files);
 if ( $method eq "diamond" ) {
   @files = glob("$workdir/*$filetype");
-  my $diamond_db = "$diamond makedb --in data/VB12Path_2020.faa --db data/VB12Path_2020";
+  my $diamond_db = "$diamond makedb --in ./VB12Path_2020.faa --db ./VB12Path_2020";
   system("$diamond_db");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/diamond/;
-    system("$diamond blastx -k 1 -e 0.0001 -p 20 -d data/VB12Path_2020 -q $file -o $out")
+    system("$diamond blastx $diamond_parameters -d ./VB12Path_2020 -q $file -o $out")
       if $seqtype eq "nucl";
-    system("$diamond blastp -k 1 -e 0.0001 -p 20 -d data/VB12Path_2020 -q $file -o $out")
+    system("$diamond blastp $diamond_parameters -d ./VB12Path_2020 -q $file -o $out")
       if $seqtype eq "prot";
     system("cp $out ./");
   }
@@ -59,7 +62,7 @@ elsif ( $method eq "usearch" ) {
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/usearch/;
-    system("$usearch -usearch_global $file -db data/VB12Path_2020.faa -id 0.3 -blast6out $out");
+    system("$usearch -usearch_global $file -db ./VB12Path_2020 $usearch_parameters -blast6out $out");
     system("cp $out ./");
   }
 }
@@ -69,20 +72,20 @@ elsif ( $method eq "blast" ) {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i data/VB12Path_2020.faa -p T");
+  system("$formatdb -i ./VB12Path_2020 -p T");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
-    system("blastall -p blastp -d data/VB12Path_2020.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
+    system("blastall -p blastp -d ./VB12Path_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "prot";
-    system("blastall -p blastx -d data/VB12Path_2020.faa -i $file -o $out -m 8 -e 1e-4 -b 1 -v 1")
+    system("blastall -p blastx -d ./VB12Path_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "nucl";
     system("cp $out ./");
   }
 }
 
 my %id2gene;
-open( FILE, "data/id2gene.VB12.map" ) || die "#1\n";
+open( FILE, "./id2gene.map" ) || die "#1 cannot open id2gene.map\n";
 while (<FILE>) {
   chomp;
   my @items = split( "\t", $_ );
@@ -101,7 +104,7 @@ foreach my $file ( @sfiles ) {
   my $sample = $1;
   $samples{$sample} = 1;
   my %hit;
-  open( FILE, "$file" ) || die "#2\n";
+  open( FILE, "$file" ) || die "#2 cannot open $file\n";
   while (<FILE>) {
     chomp;
     my @items = split( "\t", $_ );
@@ -116,7 +119,7 @@ foreach my $file ( @sfiles ) {
 
 my %size;
 my @sizes;
-open( FILE, "$sampleinfo" ) || die "#3\n";
+open( FILE, "$sampleinfo" ) || die "#3 cannot open $sampleinfo\n";
 while (<FILE>) {
   chomp;
   my @items = split( "\t", $_ );
@@ -134,7 +137,7 @@ $rs = $randomsampling if defined $randomsampling;
 my %abundance_rs = &RandomSampling( \%abundance, \%size, $rs );
 
 my @samples = keys %samples;
-open( OUT, ">$outfile" ) || die "#2\n";
+open( OUT, ">$outfile" ) || die "#4 cannot write $outfile\n";
 print OUT "#random sampling: $rs\n";
 print OUT "Gene\t", join( "\t", @samples ), "\n";
 foreach my $gene ( sort keys %abundance_rs ) {
