@@ -14,6 +14,7 @@ my $diamond_parameters="-k 1 -e 1e-4 -p 20";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch = "usearch8.1.1861_i86linux32";
 my $usearch_parameters="-id 0.3";
+##kraken2
 my $kraken2="~/kraken2/kraken2";
 my $kraken2db="~/kraken2-fulldatabase";
 
