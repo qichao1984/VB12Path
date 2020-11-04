@@ -18,18 +18,24 @@ Four files are included in VB12Path:
 
 git clone https://github.com/qichao1984/VB12Path.git
 
-<b>Dependencies and Tools</b>
-<p><i>Perl modules that can be easily installed via cpan:</i></p>
+<p><b>Dependencies and Tools</b></p>
+<i>Perl modules that can be easily installed via cpan:</i>
 List::Util
+
 Getopt::Long
 
-<p><i>Dependencies for VB12Path_FunctionProfiler.PL, currently supported database searching tools are:</i></p>
+<i>Dependencies for VB12Path_FunctionProfiler.PL, currently supported database searching tools are:</i>
+
 usearch: https://www.drive5.com/usearch/download.html
+
 diamond: https://github.com/bbuchfink/diamond/releases
+
 blast: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
 
-<p><i>Dependencies for VB12Path_TaxonomyProfiler.PL:</i></p>
+<i>Dependencies for VB12Path_TaxonomyProfiler.PL:</i>
+
 seqtk: https://github.com/lh3/seqtk.git;
+
 kraken2: https://github.com/DerrickWood/kraken2.git
 
 <b>USAGE</b>
