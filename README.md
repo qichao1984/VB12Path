@@ -101,5 +101,5 @@ Functional gene profiles and taxonomic profiles at different levels are respecti
 While we encourage users to perform sophisticated statistical analysis using these tables, the following basic statistical analyses are recommended before doing so. 
 
 1. Ordination analyses (NMDS, PCoA, DCA etc. ) and visualization of the functional gene and taxonomic compositions related with VB12 biosynthesis.
-2. Relative abundances of different gene families and taxonomic groups at phylum or somewhat high level. The relative abundances can be summarized in two different ways, i.e. based on random sampling depth and the total number of reads mapped to NCycDB.
+2. Relative abundances of different gene families and taxonomic groups at phylum or somewhat high level. The relative abundances can be summarized in two different ways, i.e. based on random sampling depth and the total number of reads mapped to VB12Path. We recommend to calculate relative abundances based on random sampling depth. 
 3. Correlate the compositions of VB12 gene families and taxonomic groups to environmental factors to reveal the potential environmental drivers affecting VB12 communities.
