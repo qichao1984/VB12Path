@@ -6,7 +6,7 @@ The developed VB12Path contains 60 key gene families and 519,827 representative 
 
 Four files are included in VB12Path:
 
-<b>1. VB12_2020.zip</b>: fasta format representative sequences obtained by clustering curated sequences at 100% sequence identity. This file can be used for "BLAST" searching VB12Path genes in shotgun metagenomes.
+<b>1. VB12_2020.zip</b>: fasta format representative sequences obtained by clustering curated sequences at 100% sequence identity. This file can be used for "BLAST" searching VB12Path genes in shotgun metagenomes. Due to the file size limit of GitHub, we splited this file into three files. Windows users can directly decompress VB12_2020.zip using programs like winrar or the built in winzip program in windows explorer. For linux users, please follow the following steps to decompress this file: mv VB12_2020.zip VB12_2020.z03; cat VB12_2020.z* > VB12_2020.zip; zip -FF VB12_2020.zip --out VB12_2020-full.zip; unzip VB12_2020-full.zip
 
 <b>2. id2gene.map</b>: a mapping file that maps sequence IDs to gene names, only sequences belonging to VB12Path gene families are included. Sequences for VB12Path homologs are not included. This file is used to generate VB12Path profiles from BLAST-like results against the VB12Path database. 
 
