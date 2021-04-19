@@ -41,7 +41,7 @@ blast: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/b
 
 seqtk: https://github.com/lh3/seqtk.git;
 
-kraken2: https://github.com/DerrickWood/kraken2.git
+kraken2: https://github.com/DerrickWood/kraken2.git. Several options are available when building Kraken2 databases. We recommend to build a standard Kraken2 database. 
 
 <b>Selection of Database Searching Tools</b>:
 Three database searching tools, including the legacy ncbi blast, diamond, and usearch, are currently employed in the scripts. However, we recommend users to use diamond, which is faster than blast and supports large input files. 
