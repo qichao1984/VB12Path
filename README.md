@@ -14,6 +14,8 @@ Four files are included in VB12Path:
 
 <b>4. VB12Path_TaxonomyProfiler.PL</b>: a perl script for taxonomical profiling of VB12 synthesis microbial communities
 
+<b>5. Cutoffs: cutoffs (e.g. e-values and identities) can be modified at the beginning lines of the scripts. The default parameters (e.g. e-value of 1e-4) were relatively conserved, users can make modification according to their data. Usually, relaxed parameters may introduce false positives, while strict parameters may increase false negatives. To our best knowledge, no standard criteria is available in metagenomics. The parameters shall be modified according to the data types. For example, for short reads at 36bp, an e-value cutoff of 10 are usually used. 
+
 <b>DOWNLOAD/INSTALLATION</b>
 
 git clone https://github.com/qichao1984/VB12Path.git
