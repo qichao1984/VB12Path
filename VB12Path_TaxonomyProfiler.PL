@@ -41,7 +41,7 @@ if ( !defined $workdir
 my (@files);
 if ( $method eq "diamond" ) {
    @files = glob("$workdir/*$filetype");
-  my $diamond_db = "$diamond makedb --in ./data/VB12Path_2020.faa --db ./data/VB12Path_2020" if (!-e "data/VB12Path_2020.dmnd");
+  my $diamond_db = "$diamond makedb --in ./data/VB12_2020.faa --db ./data/VB12Path_2020" if (!-e "data/VB12Path_2020.dmnd");
   system("$diamond_db");
   foreach my $file (@files) {
     my $out = $file;
@@ -64,7 +64,7 @@ elsif ( $method eq "usearch" ) {
     my $out = $file;
     $out =~ s/$filetype/usearch/;
 	if(!-e $out){
-    system("$usearch -usearch_global $file -db ./data/VB12Path_2020 $usearch_parameters -blast6out $out");
+    system("$usearch -usearch_global $file -db ./data/VB12_2020.faa $usearch_parameters -blast6out $out");
     #system("cp $out ./");
   }}
 }
@@ -74,14 +74,14 @@ elsif ( $method eq "blast" ) {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i ./data/VB12Path_2020 -p T");
+  system("$formatdb -i ./data/VB12_2020.faa -p T");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
 	if(!-e $out){
-    system("blastall -p blastp -d ./data/VB12Path_2020 -i $file -o $out $blast_parameters")
+    system("blastall -p blastp -d ./data/VB12_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "prot";
-    system("blastall -p blastx -d ./data/VB12Path_2020 -i $file -o $out $blast_parameters")
+    system("blastall -p blastx -d ./data/VB12_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "nucl";
     #system("cp $out ./");
   }}
