@@ -9,7 +9,7 @@ my $formatdb = "formatdb";
 my $blast_parameters="-m 8 -e 1e-4 -b 1 -v 1";
 ##diamond https://github.com/bbuchfink/diamond/releases
 my $diamond = "diamond";
-my $diamond_parameters="-k 1 -e 1e-4 -p 20";
+my $diamond_parameters="-k 1 -e 1e-4 -p 20 --sensitive";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch = "usearch8.1.1861_i86linux32";
 my $usearch_parameters="-id 0.3";
@@ -41,17 +41,18 @@ if ( !defined $workdir
 my (@files);
 if ( $method eq "diamond" ) {
    @files = glob("$workdir/*$filetype");
-  my $diamond_db = "$diamond makedb --in ./VB12Path_2020.faa --db ./VB12Path_2020";
+  my $diamond_db = "$diamond makedb --in ./data/VB12Path_2020.faa --db ./data/VB12Path_2020" if (!-e "data/VB12Path_2020.dmnd");
   system("$diamond_db");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/diamond/;
-    system("$diamond blastx $diamond_parameters -d ./VB12Path_2020 -q $file -o $out")
+	if(!-e $out){
+    system("$diamond blastx $diamond_parameters -d ./data/VB12Path_2020 -q $file -o $out")
       if $seqtype eq "nucl";
-    system("$diamond blastp $diamond_parameters -d ./VB12Path_2020 -q $file -o $out")
+    system("$diamond blastp $diamond_parameters -d ./data/VB12Path_2020 -q $file -o $out")
       if $seqtype eq "prot";
-    system("cp $out ./");
-  }
+    #system("cp $out ./");
+  }}
 }
 elsif ( $method eq "usearch" ) {
   die "Please specify the location of usearch!" if !-e $usearch;
@@ -62,9 +63,10 @@ elsif ( $method eq "usearch" ) {
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/usearch/;
-    system("$usearch -usearch_global $file -db ./VB12Path_2020 $usearch_parameters -blast6out $out");
-    system("cp $out ./");
-  }
+	if(!-e $out){
+    system("$usearch -usearch_global $file -db ./data/VB12Path_2020 $usearch_parameters -blast6out $out");
+    #system("cp $out ./");
+  }}
 }
 elsif ( $method eq "blast" ) {
   die "Please specify the location of blast and/or formatdb!" if !-e $blast or !-e $formatdb;
@@ -72,20 +74,21 @@ elsif ( $method eq "blast" ) {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i ./VB12Path_2020 -p T");
+  system("$formatdb -i ./data/VB12Path_2020 -p T");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
-    system("blastall -p blastp -d ./VB12Path_2020 -i $file -o $out $blast_parameters")
+	if(!-e $out){
+    system("blastall -p blastp -d ./data/VB12Path_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "prot";
-    system("blastall -p blastx -d ./VB12Path_2020 -i $file -o $out $blast_parameters")
+    system("blastall -p blastx -d ./data/VB12Path_2020 -i $file -o $out $blast_parameters")
       if $seqtype eq "nucl";
-    system("cp $out ./");
-  }
+    #system("cp $out ./");
+  }}
 }
 
 my %id2gene;
-open( FILE, "./id2gene.map" ) || die "#1 cannot open file id2gene.map\n";
+open( FILE, "./data/id2gene.map.2021" ) || die "#1 cannot open file id2gene.map\n";
 while (<FILE>) {
   chomp;
   my @items = split( "\t", $_ );
@@ -95,12 +98,12 @@ close FILE;
 
 my %abundance;
 my %samples;
-my @sfiles=glob("*diamond") if $method eq "diamond";
-@sfiles=glob("*usearch") if $method eq "usearch";
-@sfiles=glob("*blast") if $method eq "blast";
+my @sfiles=glob("$workdir/*diamond") if $method eq "diamond";
+@sfiles=glob("$workdir/*usearch") if $method eq "usearch";
+@sfiles=glob("$workdir/*blast") if $method eq "blast";
 die "No diamond/usearch/blast files were detected!\n" if $#sfiles==-1;
 foreach my $sfile ( @sfiles ) {
-  $sfile =~ /(.*?)\.$method/;
+  $sfile =~ /$workdir\/(.*?)\.$method/;
   my $sample = $1;
   $samples{$sample} = 1;
   my %hit;
@@ -115,18 +118,18 @@ foreach my $sfile ( @sfiles ) {
     }
   }
   close FILE;
-  open(LIST,">$sample.list")||die"#3 cannot open $sample.list\n";
+  open(LIST,">$workdir/$sample.list")||die"#3 cannot open $sample.list\n";
   foreach my $hit(keys %hit){
     print LIST "$hit\n";
   }
   close LIST;
   @files = glob("$workdir/*$filetype");
   foreach my $file (@files){  
-    system("~/seqtk subseq $file $sample.list > $sample.VB12.fastq");
+    system("~/seqtk subseq $file $workdir/$sample.list > $workdir/$sample.VB12.fastq");
  }
 }
 
-foreach my $file(glob("*.VB12.fastq")){
+foreach my $file(glob("$workdir/*.VB12.fastq")){
   my $outfile=$file;
   my $reportfile=$file;
   $outfile=~s/VB12.fastq/kraken2.txt/;
