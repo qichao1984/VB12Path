@@ -20,7 +20,7 @@ The following files are included in VB12Path:
 
 <b>DOWNLOAD/INSTALLATION</b>
 
-git clone https://github.com/qichao1984/VB12Path.git
+The database and scripts can directly downloaded and used by git clone https://github.com/qichao1984/VB12Path.git. However, users need to install the following perl modules and third party softwares. 
 
 <p><b>Dependencies and Tools</b></p>
 <i>Perl modules that can be easily installed via cpan:</i>
