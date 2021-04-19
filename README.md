@@ -43,6 +43,9 @@ seqtk: https://github.com/lh3/seqtk.git;
 
 kraken2: https://github.com/DerrickWood/kraken2.git
 
+<b>Selection of Database Searching Tools</b>:
+Three database searching tools, including the legacy ncbi blast, diamond, and usearch, are currently employed in the scripts. However, we recommend users to use diamond, which is faster than blast and supports large input files. 
+
 <b>USAGE</b>
 
 Before getting started, please modify both scripts (VB12Path_FunctionProfiler.PL, VB12Path_TaxonomyProfiler.PL) at lines 6-18 to specify the locations of third party tools and their parameters. If the tools are already in the system path, no revision is needed. By default, basic parameters are used for these tools. Users are encouraged to make revisions in cases of short reads and/or expecting more strict/relaxed results. We also encourage users to develop useful implementations based on VB12Path.
