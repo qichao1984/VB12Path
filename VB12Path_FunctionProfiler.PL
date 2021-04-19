@@ -81,7 +81,7 @@ if ($method eq "diamond") {
     system(
       "$diamond blastp $diamond_parameters -d ./data/VB12Path_2020 -q $file -o $out"
     ) if $seqtype eq "prot";
-    system("cp $out ./");
+    #system("cp $out ./");
   }}
 } elsif ($method eq "usearch") {
   die "Please specify the location of usearch!" if !-e $usearch;
@@ -96,7 +96,7 @@ if ($method eq "diamond") {
     system(
       "$usearch -usearch_global $file -db ./data/VB12Path_2020.faa $usearch_parameters -blast6out $out"
     );
-    system("cp $out ./");
+    #system("cp $out ./");
   }}
 } elsif ($method eq "blast") {
   die "Please specify the location of blast and/or formatdb!"
@@ -116,7 +116,7 @@ if ($method eq "diamond") {
     system(
       "blastall -p blastx -d ./data/VB12Path_2020 -i $file -o $out $blast_parameters"
     ) if $seqtype eq "nucl";
-    system("cp $out ./");
+    #system("cp $out ./");
   }}
 }
 
@@ -132,12 +132,12 @@ close FILE;
 my %identity;
 my %abundance;
 my %samples;
-my @sfiles = glob("*diamond") if $method eq "diamond";
-@sfiles = glob("*usearch") if $method eq "usearch";
-@sfiles = glob("*blast")   if $method eq "blast";
+my @sfiles = glob("$workdir/*diamond") if $method eq "diamond";
+@sfiles = glob("$workdir/*usearch") if $method eq "usearch";
+@sfiles = glob("$workdir/*blast")   if $method eq "blast";
 die "No diamond/usearch/blast files were detected!\n" if $#sfiles == -1;
 foreach my $file (@sfiles) {
-  $file =~ /(.*?)\.$method/;
+  $file =~ /$workdir\/(.*?)\.$method/;
   my $sample = $1;
   $samples{$sample} = 1;
   my %hit;
