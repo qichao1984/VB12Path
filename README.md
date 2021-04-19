@@ -16,7 +16,7 @@ The following files are included in VB12Path:
 
 <b>5. Example files</b>: We provided three testing fastq files and corresponding sampleinfo file in the example folder so that users can test the scripts before running real large data.
 
-<b>Cutoffs</b>: cutoffs (e.g. e-values and identities) can be modified at the beginning lines of the scripts. The default parameters (e.g. e-value of 1e-4) were relatively conserved, users can make modification according to their data. Usually, relaxed parameters may introduce false positives, while strict parameters may increase false negatives. To our best knowledge, no standard criteria is available in metagenomics. The parameters shall be modified according to the data types. For example, for short reads at 36bp, an e-value cutoff of 10 are usually used. 
+<b>Cutoffs</b>: cutoffs (e.g. e-values and identities) can be modified at the beginning lines of the scripts. The default parameters (e.g. e-value of 1e-4) were relatively conserved, users can make modification according to their data. Usually, relaxed parameters may introduce false positives, while strict parameters may increase false negatives. To our best knowledge, no standard criteria is available in metagenomics. The parameters shall also be modified according to the data types. For example, for short reads at 36bp, an e-value cutoff of 10 are usually used. 
 
 <b>DOWNLOAD/INSTALLATION</b>
 
