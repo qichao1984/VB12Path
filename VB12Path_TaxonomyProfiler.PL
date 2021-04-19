@@ -125,8 +125,7 @@ foreach my $sfile ( @sfiles ) {
     print LIST "$hit\n";
   }
   close LIST;
-  my $file="$workdir/$sample.$filetype";
-  system("$seqtk subseq $file $workdir/$sample.list > $workdir/$sample.VB12.fastq");
+  system("$seqtk subseq $workdir/$sample.$filetype $workdir/$sample.list > $workdir/$sample.VB12.fastq");
 }
 
 foreach my $file(glob("$workdir/*.VB12.fastq")){
