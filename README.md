@@ -4,17 +4,19 @@ Cobalamin (VB12) is of critical importance to both natural ecosystems and host h
 
 The developed VB12Path contains 60 key gene families and 519,827 representative sequences, and 21,154 homologous orthology groups were also included to reduce false positive sequence assignments.
 
-Four files are included in VB12Path:
+The following files are included in VB12Path:
 
-<b>1. VB12_2020.zip</b>: fasta format representative sequences obtained by clustering curated sequences at 100% sequence identity. This file can be used for "BLAST" searching VB12Path genes in shotgun metagenomes. Due to the file size limit of GitHub, we splited this file into three files. Windows users can directly decompress VB12_2020.zip using programs like winrar or the built in winzip program in windows explorer. For linux users, please follow the following steps to decompress this file: mv VB12_2020.zip VB12_2020.z03; cat VB12_2020.z* > VB12_2020.zip; zip -FF VB12_2020.zip --out VB12_2020-full.zip; unzip VB12_2020-full.zip
+<b>1. VB12Path_2020.zip</b>: fasta format representative sequences obtained by clustering curated sequences at 100% sequence identity. This file can be used for "BLAST" searching VB12Path genes in shotgun metagenomes. Due to the file size limit of GitHub, we splited this file into three files. Windows users can directly decompress VB12_2020.zip using programs like winrar or the built in winzip program in windows explorer. For linux users, please follow the following steps to decompress this file: mv VB12_2020.zip VB12_2020.z03; cat VB12_2020.z* > VB12_2020.zip; zip -FF VB12_2020.zip --out VB12_2020-full.zip; unzip VB12_2020-full.zip
 
-<b>2. id2gene.map</b>: a mapping file that maps sequence IDs to gene names, only sequences belonging to VB12Path gene families are included. Sequences for VB12Path homologs are not included. This file is used to generate VB12Path profiles from BLAST-like results against the VB12Path database. 
+<b>2. id2gene.map.2021 and annotations.txt</b>: a mapping file that maps sequence IDs to gene names, only sequences belonging to VB12Path gene families are included. Sequences for VB12Path homologs are not included. This file is used to generate VB12Path profiles from BLAST-like results against the VB12Path database. 
 
 <b>3. VB12Path_FunctionProfiler.PL</b>: a perl script for functional profiling of VB12 synthesis genes.
 
 <b>4. VB12Path_TaxonomyProfiler.PL</b>: a perl script for taxonomical profiling of VB12 synthesis microbial communities
 
-<b>5. Cutoffs: cutoffs (e.g. e-values and identities) can be modified at the beginning lines of the scripts. The default parameters (e.g. e-value of 1e-4) were relatively conserved, users can make modification according to their data. Usually, relaxed parameters may introduce false positives, while strict parameters may increase false negatives. To our best knowledge, no standard criteria is available in metagenomics. The parameters shall be modified according to the data types. For example, for short reads at 36bp, an e-value cutoff of 10 are usually used. 
+<b>5. Example files</b>: We provided three testing fastq files and corresponding sampleinfo file in the example folder so that users can test the scripts before running real large data.
+
+<b>Cutoffs</b>: cutoffs (e.g. e-values and identities) can be modified at the beginning lines of the scripts. The default parameters (e.g. e-value of 1e-4) were relatively conserved, users can make modification according to their data. Usually, relaxed parameters may introduce false positives, while strict parameters may increase false negatives. To our best knowledge, no standard criteria is available in metagenomics. The parameters shall be modified according to the data types. For example, for short reads at 36bp, an e-value cutoff of 10 are usually used. 
 
 <b>DOWNLOAD/INSTALLATION</b>
 
