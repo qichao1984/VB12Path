@@ -4,15 +4,17 @@ use List::Util qw(shuffle);
 use Getopt::Long;
 ##Please specify where your prefered database searching tool locates
 ##NCBI blast ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz
-my $blast    = "blastall";
-my $formatdb = "formatdb";
+my $blast    = "./bin/blastall";
+my $formatdb = "./bin/formatdb";
 my $blast_parameters="-m 8 -e 1e-4 -b 1 -v 1";
 ##diamond https://github.com/bbuchfink/diamond/releases
-my $diamond = "diamond";
+my $diamond = "./bin/diamond";
 my $diamond_parameters="-k 1 -e 1e-4 -p 20 --sensitive";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch = "usearch8.1.1861_i86linux32";
 my $usearch_parameters="-id 0.3";
+#seqtk
+my $seqtk="./bin/seqtk";
 ##kraken2
 my $kraken2="~/kraken2/kraken2";
 my $kraken2db="~/kraken2-fulldatabase";
@@ -123,10 +125,8 @@ foreach my $sfile ( @sfiles ) {
     print LIST "$hit\n";
   }
   close LIST;
-  @files = glob("$workdir/*$filetype");
-  foreach my $file (@files){  
-    system("~/seqtk subseq $file $workdir/$sample.list > $workdir/$sample.VB12.fastq");
- }
+  my $file="$workdir/$sample.$filetype";
+  system("$seqtk subseq $file $workdir/$sample.list > $workdir/$sample.VB12.fastq");
 }
 
 foreach my $file(glob("$workdir/*.VB12.fastq")){
