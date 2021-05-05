@@ -102,7 +102,9 @@ sample_name3	\<the number of sequences\>
 Reference tools:seqkit https://bioinf.shenwei.me/seqkit/usage/#seqkit
 
 In the example folder, we provided three fastq files each containing 50000 sequences for users to test if the script and database run correctly. The output files were also provided in the example/output folder. 
+
 Command for functional profiling: perl VB12Path_FunctionProfiler.PL -d example -m diamond -f fastq -s nucl -si example/sampleinfo.txt -rs 50000 -o example/VB12_functional_profile.txt
+
 Command for taxonomic profiling: perl VB12Path_TaxonomyProfiler.PL -d example -m diamond -f fastq -s nucl -si example/sampleinfo.txt -rs 50000
 
 
