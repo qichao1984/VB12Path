@@ -1,0 +1,50 @@
+#random sampling: 50000
+Gene	Annotation	Pathway	KO ID	KO Annotation	COG	COG Annotation	Mean Identity	ERR315858	ERR315856	ERR315857
+bluB	"5,6-dimethylbenzimidazole synthase"	Post-Adocbi-P	K04719	"5,6-dimethylbenzimidazole synthase"			54.6457142857143	17	11	7
+btuB	Vitamin B12 transporter BtuB	Salvage	K16092	Vitamin B12 transporter	COG4206	Outer membrane cobalamin receptor protein	54.6519650655022	206	196	285
+btuD	Vitamin B12 import ATP-binding protein BtuD	Salvage	K06074	Vitamin B12 transport system ATP-binding protein	COG4138	"ABC-type cobalamin transport system, ATPase component"	61.7142857142857	6	8	7
+btuF	Vitamin B12-binding protein	Salvage	K06858	Vitamin B12 transport system substrate-binding protein			55.6444444444444	6	9	3
+btuR	Cob(I)alamin adenosyltransferase	Anaerobic	K19221	Cob(I)alamin adenosyltransferase	COG2109	ATP:corrinoid adenosyltransferase	61.5	2	7	0
+cbiA	"Cobyrinate a,c-diamide synthase"	Anaerobic	K02224	"Cobyrinic acid a,c-diamide synthase"	COG1797	"Cobyrinic acid a,c-diamide synthase"	60.3652777777778	23	24	25
+cbiB	Cobalamin biosynthesis protein CbiB	"Anaerobic,Salvage"	K02227	Adenosylcobinamide-phosphate synthase	COG1270	Cobalamin biosynthesis protein CobD/CbiB	64.3633333333333	9	13	8
+cbiC	Cobalt-precorrin-8 methylmutase	Anaerobic	K06042	Precorrin-8X/cobalt-precorrin-8 methylmutase	COG2082	Precorrin-8X methylmutase activity	93.9666666666667	0	2	4
+cbiD	Cobalt-precorrin-5B C(1)-methyltransferase	Anaerobic	K02188	Cobalt-precorrin-5B (C1)-methyltransferase	COG1903	Cobalamin biosynthesis protein CbiD	93.0014492753623	36	72	30
+cbiE	Cobalt-precorrin-7 C(5)-methyltransferase	Anaerobic	K03399	Cobalt-precorrin-7 (C5)-methyltransferase			48.7	0	0	1
+cbiF	Cobalt-precorrin-4 C(11)-methyltransferase	Anaerobic	K05936	Precorrin-4/cobalt-precorrin-4 C11-methyltransferase	COG2875	Precorrin-4 methylase	100	1	0	0
+cbiH	Cobalt-factor III C(17)-methyltransferase	Anaerobic	K05934	Precorrin-3B C17-methyltransferase	COG1010	Precorrin-3B methylase	76.6898148148148	18	64	26
+cbiJ	Cobalt-precorrin-6A reductase	Anaerobic	K05895	Precorrin-6A/cobalt-precorrin-6A reductase	COG2099	Precorrin-6x reductase	48	0	1	2
+cbiL	Cobalt-precorrin-2 C(20)-methyltransferase	Anaerobic	K03394	Precorrin-2/cobalt-factor-2 C20-methyltransferase	COG2243	Precorrin-2 c20-methyltransferase	70.0666666666667	0	1	2
+cbiT	Cobalt-precorrin-6B C(15)-methyltransferase	Anaerobic	K02191	Cobalt-precorrin-6B (C15)-methyltransferase			61.0789473684211	5	9	5
+cbiX	Sirohydrochlorin cobaltochelatase	Anaerobic	K03795	Sirohydrochlorin cobaltochelatase	COG2138	Sirohydrochlorin ferrochelatase	59.56	0	2	3
+cobA	Uroporphyrinogen-III c-methyltransferase	"Precorrin-2 synthesis,Anaerobic,Salvage"	K02303	Uroporphyrin-III C-methyltransferase	COG0007|COG1587	Uroporphyrinogen-III methylase (siroheme synthase)|uroporphyrinogen-III synthase activity	86.4032863849765	71	98	44
+cobB	"Hydrogenobyrinate a,c-diamide synthase"	Aerobic	K02224	"Cobyrinic acid a,c-diamide synthase"	COG1797	"Cobyrinic acid a,c-diamide synthase"	67.8834586466165	35	67	31
+cobC-ado	Adenosylcobalamin/alpha-ribazole phosphatase	Post-Adocbi-P	K02226	Alpha-ribazole phosphatase	COG0406	Alpha-ribazole phosphatase activity	53.3	0	0	1
+cobC-beta	Threonine-phosphate decarboxylase	Aerobic					52.7083333333333	15	13	8
+cobD	Threonine-phosphate decarboxylase	"Aerobic,Anaerobic"	K04720	Threonine-phosphate decarboxylase			43.7484848484849	11	16	6
+cobF	Precorrin-6A synthase	Aerobic	K02228	Precorrin-6A synthase	COG2243	Precorrin-2 c20-methyltransferase	59.8615384615385	4	10	12
+cobG	Precorrin-3B synthase	Aerobic	K02229	Precorrin-3B synthase			54.1470588235294	6	6	5
+cobH	Precorrin-8X methylmutase	Aerobic	K06042	Precorrin-8X/cobalt-precorrin-8 methylmutase	COG2082	Precorrin-8X methylmutase activity	83.98	18	33	19
+cobI	Precorrin-2 C(20)-methyltransferase	Aerobic	K03394	Precorrin-2/cobalt-factor-2 C20-methyltransferase	COG2243	Precorrin-2 c20-methyltransferase	68.6765957446808	19	20	8
+cobJ	Precorrin-3B C(17)-methyltransferase	Aerobic	K05934	Precorrin-3B C17-methyltransferase	COG1010	Precorrin-3B methylase	77.5907407407408	25	23	6
+cobK	Precorrin-6A reductase	Aerobic	K05895	Precorrin-6A/cobalt-precorrin-6A reductase	COG2099	Precorrin-6x reductase	58.2222222222222	18	14	13
+cobL	"Precorrin-6Y C(5,15)-methyltransferase"	Aerobic	K00595	"Precorrin-6Y C5,15-methyltransferase (decarboxylating)"			60.4359550561798	34	34	21
+cobM	Precorrin-4 C(11)-methyltransferase	Aerobic	K05936	Precorrin-4/cobalt-precorrin-4 C11-methyltransferase	COG2875	Precorrin-4 C11-methyltransferase activity	90.3246031746031	25	68	33
+cobN	Aerobic cobaltochelatase subunit CobN	Aerobic	K02230	Cobaltochelatase CobN	COG1429	"Cobalamin biosynthesis protein CobN, Mg-chelatase"	63.2537001897533	164	244	119
+cobO	Corrinoid adenosyltransferase	"Aerobic,Salvage"	K00798Â	cob(I)alamin adenosyltransferase			88.1619909502262	40	125	56
+cobP	Bifunctional adenosylcobalamin biosynthesis protein CobP	"Aerobic,Salvage,Post-Adocbi-P"	K02231	Adenosylcobinamide kinase / adenosylcobinamide-phosphate guanylyltransferase	COG2087	Adenosyl cobinamide kinase/adenosyl cobinamide phosphate guanylyltransferase	67.4111111111111	16	25	13
+cobQ	Cobyric acid synthase	Aerobic	K02232	Adenosylcobyric acid synthase	COG1492	Cobyric acid synthase	85.5358288770053	50	82	55
+cobS-co	Adenosylcobinamide-GDP ribazoletransferase	Aerobic	K02233	Adenosylcobinamide-GDP ribazoletransferase			88.5992868462756	433	321	508
+cobS-gdp	Aerobic cobaltochelatase subunit CobS	Post-Adocbi-P	K09882	Ccobaltochelatase CobS	COG0368	Cobalamin synthase	79.112037037037	33	46	29
+cobT-alpha	Nicotinate-nucleotide--dimethylbenzimidazole phosphoribosyltransferase	Post-Adocbi-P	K00768	Nicotinate-nucleotide--dimethylbenzimidazole phosphoribosyltransferase	COG2038	Nicotinate-nucleotide-dimethylbenzimidazole phosphoribosyltransferase activity	72.0426086956522	39	35	41
+cobT-co	Aerobic cobaltochelatase subunit CobT	Aerobic	K09883	Cobaltochelatase CobT			85.5656005685855	550	320	537
+cobU-ade	Bifunctional adenosylcobalamin biosynthesis protein CobU	"Anaerobic,Salvage,Post-Adocbi-P"	K02231	Adenosylcobinamide kinase / adenosylcobinamide-phosphate guanylyltransferase	COG2087	Adenosyl cobinamide kinase/adenosyl cobinamide phosphate guanylyltransferase	60.6571428571429	1	3	3
+cobY	Adenosylcobinamide-phosphate guanylyltransferase	Salvage	K19712	Aadenosylcobinamide-phosphate guanylyltransferase	COG2266	GTP:adenosylcobinamide-phosphate guanylyltransferase	46.3	1	1	1
+cysG	Siroheme synthase	Precorrin-2 synthesis	K02302	Uroporphyrin-III C-methyltransferase / precorrin-2 dehydrogenase / sirohydrochlorin ferrochelatase	COG0007|COG1648	Uroporphyrinogen-III methylase (siroheme synthase)|Siroheme synthase (precorrin-2 oxidase/ferrochelatase domain)	78.8715846994535	40	95	48
+fre	NAD(P)H-flavin reductase	Post-Adocbi-P	K05368	Aquacobalamin reductase / NAD(P)H-flavin reductase	COG0543	NAD(P)H-flavin reductase	88.1260869565217	1	18	4
+gltX	Glutamate--tRNA ligase	Precorrin-2 synthesis	K01885	Glutamyl-tRNA synthetase	COG0008	Glutamyl- or glutaminyl-tRNA synthetase	82.2451952882828	1029	1028	1169
+hemA	Glutamyl-tRNA reductase	Precorrin-2 synthesis	K02492	Glutamyl-tRNA reductase	COG0373	Glutamyl-tRNA reductase	80.7461240310078	138	195	183
+hemB	Delta-aminolevulinic acid dehydratase	Precorrin-2 synthesis	K01698	Porphobilinogen synthase	COG0113	"Delta-aminolevulinic acid dehydratase, porphobilinogen synthase"	75.4973706896554	1623	1379	1638
+hemC	Porphobilinogen deaminase	Precorrin-2 synthesis	K01749	Hhydroxymethylbilane synthase	COG0181	Porphobilinogen deaminase	71.8353727144866	463	450	509
+hemL	"Glutamate-1-semialdehyde 2,1-aminomutase"	Precorrin-2 synthesis	K01845	"Glutamate-1-semialdehyde 2,1-aminomutase"	COG0001	Glutamate-1-semialdehyde aminotransferase	70.2771718452758	521	517	539
+pduO	Corrinoid adenosyltransferase	"Salvage,Post-Adocbi-P"	K00798	Cob(I)alamin adenosyltransferase	COG2096	"Cob(I)yrinic acid a,c-diamide adenosyltransferase activity"	66.328125	82	72	70
+pduX	L-threonine kinase	Anaerobic	K16651	L-threonine kinase			53.3444444444444	3	4	2

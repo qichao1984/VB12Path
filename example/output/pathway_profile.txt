@@ -1,0 +1,7 @@
+#random sampling: 50000
+Pathway	Total Gene Families in VB12Path	ERR315858	ERR315856	ERR315857
+Aerobic	18	17	17	17
+Salvage	13	10	10	10
+Precorrin-2 synthesis	8	7	7	7
+Anaerobic	19	11	14	14
+Post-Adocbi-P	12	7	7	8
