@@ -1,6 +1,6 @@
 # VB12Path
 # VB12Path: A Curated Functional Gene Database for Metagenomic Profiling of cobalamin synthesis pathways
-Citation: Zhou J, Yu X, Liu J, Qin W, He Z, Stahl D, Jiao N, Zhou J, Tu Q. VB12Path for Accurate Metagenomic Profiling of Microbially Driven Cobalamin Synthesis Pathways. mSystems. 2021 Jun 1:e0049721. doi: 10.1128/mSystems.00497-21.
+<b>Citation: Zhou J, Yu X, Liu J, Qin W, He Z, Stahl D, Jiao N, Zhou J, Tu Q. VB12Path for Accurate Metagenomic Profiling of Microbially Driven Cobalamin Synthesis Pathways. mSystems. 2021 Jun 1:e0049721. doi: 10.1128/mSystems.00497-21.</b>
 
 Cobalamin (VB12) is of critical importance to both natural ecosystems and host health, but can only be synthesized by a small group of microorganisms. Shotgun metagenome sequencing has greatly facilitated profiling VB12 biosynthesis gene families and associated microbial taxa. However, there are many challenges for accurate profiling of functional gene families with public ortholog databases, such as inefficient database searching, difficulties in distinguishing homologous genes, and low coverage of VB12 synthesis genes and/or gene (sub)families. A comprehensive and accurate database for characterizing VB12 synthesis microbial communities from different environments is therefore in urgent need for metagenomic analysis. 
 
