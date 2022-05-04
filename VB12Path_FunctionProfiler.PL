@@ -105,7 +105,7 @@ if ($method eq "diamond") {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i ./data/VB12_2020.faa -p T");
+  system("$formatdb -i ./data/VB12_2020.faa -p T -n ./data/VB12_2020");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
