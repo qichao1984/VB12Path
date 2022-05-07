@@ -13,7 +13,7 @@ my $diamond            = "./bin/diamond";
 my $diamond_parameters = "-k 1 -e 1e-4 -p 20 --sensitive";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch            = "./bin/usearch8.1.1861_i86linux32";
-my $usearch_parameters = "-id 0.3"; ##identity cutoff for search_global
+my $usearch_parameters = "-id 0.3 -trunclabels"; ##identity cutoff for search_global
 
 my ($workdir, $method, $outfile, $seqtype, $filetype, $sampleinfo,
     $randomsampling);
@@ -36,7 +36,7 @@ if (   !defined $workdir
     || !defined $seqtype
     || !defined $sampleinfo
     || $method   !~ /^diamond|usearch|blast$/
-    || $filetype !~ /^fastq|fastq.gz|fasta|fasta.gz|fq|fq.gz|fa|fa.gz$/)
+    || $filetype !~ /^fastq|fastq.gz|fasta|fasta.gz|fq|fq.gz|fa|fa.gz|faa$/)
 {
   &PrintHelp();
   die;
@@ -105,7 +105,7 @@ if ($method eq "diamond") {
     die "Only fasta files are supported by blast program!";
   }
   @files = glob("$workdir/*$filetype");
-  system("$formatdb -i ./data/VB12_2020.faa -p T");
+  system("$formatdb -i ./data/VB12_2020.faa -p T -n ./data/VB12_2020");
   foreach my $file (@files) {
     my $out = $file;
     $out =~ s/$filetype/blast/;
@@ -246,7 +246,7 @@ sub PrintHelp() {
   print
     "perl VB12Path_FunctionProfiler.PL -d <workdir> -m <diamond|usearch|blast> -f <filetype> -s <seqtype> -si <sample size info file> -rs <random sampling size> -o <outfile>\n";
   print "-m diamond|usearch|blast\n";
-  print "-f fastq, fastq.gz, fasta,fasta.gz, fq, fq.gz, fa, fa.gz\n";
+  print "-f fastq, fastq.gz, fasta, fasta.gz, fq, fq.gz, fa, fa.gz, faa\n";
   print "-s sequence type, nucl or prot \n";
   print "-si tab delimited file for sequence number in each file\n";
   print "-rs random sampling size\n";
