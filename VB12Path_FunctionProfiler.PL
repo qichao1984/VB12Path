@@ -13,7 +13,7 @@ my $diamond            = "./bin/diamond";
 my $diamond_parameters = "-k 1 -e 1e-4 -p 20 --sensitive";
 ##usearch https://www.drive5.com/usearch/download.html
 my $usearch            = "./bin/usearch8.1.1861_i86linux32";
-my $usearch_parameters = "-id 0.3"; ##identity cutoff for search_global
+my $usearch_parameters = "-id 0.3 -trunclabels"; ##identity cutoff for search_global
 
 my ($workdir, $method, $outfile, $seqtype, $filetype, $sampleinfo,
     $randomsampling);
