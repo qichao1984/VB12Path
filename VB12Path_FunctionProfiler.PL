@@ -36,7 +36,7 @@ if (   !defined $workdir
     || !defined $seqtype
     || !defined $sampleinfo
     || $method   !~ /^diamond|usearch|blast$/
-    || $filetype !~ /^fastq|fastq.gz|fasta|fasta.gz|fq|fq.gz|fa|fa.gz$/)
+    || $filetype !~ /^fastq|fastq.gz|fasta|fasta.gz|fq|fq.gz|fa|fa.gz|faa$/)
 {
   &PrintHelp();
   die;
@@ -246,7 +246,7 @@ sub PrintHelp() {
   print
     "perl VB12Path_FunctionProfiler.PL -d <workdir> -m <diamond|usearch|blast> -f <filetype> -s <seqtype> -si <sample size info file> -rs <random sampling size> -o <outfile>\n";
   print "-m diamond|usearch|blast\n";
-  print "-f fastq, fastq.gz, fasta,fasta.gz, fq, fq.gz, fa, fa.gz\n";
+  print "-f fastq, fastq.gz, fasta, fasta.gz, fq, fq.gz, fa, fa.gz, faa\n";
   print "-s sequence type, nucl or prot \n";
   print "-si tab delimited file for sequence number in each file\n";
   print "-rs random sampling size\n";
